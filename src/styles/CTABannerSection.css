@@ -150,14 +150,29 @@
 @media (max-width: 480px) {
   .cta-banner-buttons {
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
     width: 100%;
   }
 
   .cta-store-btn {
     width: 100%;
     justify-content: center;
-    padding: 14px 20px;
+    padding: 10px 16px;
+    border-radius: 10px;
+    gap: 8px;
+  }
+
+  .cta-store-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .cta-store-small {
+    font-size: 0.5rem;
+  }
+
+  .cta-store-name {
+    font-size: 0.88rem;
   }
 
   .cta-banner-heading {

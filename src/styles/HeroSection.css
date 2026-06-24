@@ -222,6 +222,21 @@
   .hero-store-btn {
     width: 100%;
     justify-content: center;
-    padding: 12px 20px;
+    padding: 9px 16px;
+    gap: 8px;
+    border-radius: 10px;
+  }
+
+  .hero-store-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .hero-store-small {
+    font-size: 0.5rem;
+  }
+
+  .hero-store-name {
+    font-size: 0.85rem;
   }
 }

@@ -306,5 +306,21 @@
 
   .footer-store-btn {
     width: fit-content;
+    padding: 7px 12px;
+    gap: 7px;
+    border-radius: 9px;
+  }
+
+  .footer-store-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .footer-store-small {
+    font-size: 0.48rem;
+  }
+
+  .footer-store-name {
+    font-size: 0.74rem;
   }
 }
