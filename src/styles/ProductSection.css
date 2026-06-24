@@ -4,14 +4,14 @@
 
 .product-section {
   width: 100%;
-  padding: 80px 24px;
+  padding: 64px 24px;
   display: flex;
   justify-content: center;
-  background-color: #ffffff;
+  background-color: #fafafa;
 }
 
 .product-container {
-  max-width: 1320px;
+  max-width: 1600px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -48,13 +48,14 @@
   color: #1e293b;
   margin: 0 0 16px;
   letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
 .product-subtext {
   font-size: 0.95rem;
   color: #64748b;
   line-height: 1.6;
-  margin: 0 auto;
+  margin: 0 auto 32px;
   max-width: 650px;
 }
 
@@ -63,26 +64,27 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: #f1f5f9;
-  border-radius: 100px;
-  padding: 8px;
+  background-color: #e5e7eb;
+  border-radius: 9999px;
+  padding: 8px 12px;
   margin-bottom: 60px;
-  gap: 4px;
+  gap: 8px;
 }
 
 .product-tab {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 32px;
-  border-radius: 100px;
+  padding: 10px 28px;
+  border-radius: 9999px;
   border: none;
   background: transparent;
-  color: #475569;
+  color: #64748b;
   font-weight: 500;
   font-size: 0.95rem;
   cursor: pointer;
   transition: all 0.25s ease;
+  white-space: nowrap;
 }
 
 .product-tab:hover {
@@ -92,7 +94,7 @@
 .product-tab.active {
   background-color: #1e3a8a;
   color: #ffffff;
-  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.2);
+  box-shadow: 0 2px 8px rgba(30, 58, 138, 0.15);
 }
 
 .tab-icon {
@@ -104,17 +106,31 @@
 /* ── Main Content Area ── */
 .product-content-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1.3fr;
+  grid-template-columns: 38% 62%;
   gap: 40px;
   width: 100%;
   margin-bottom: 40px;
+  opacity: 0;
+  transform: translateX(40px) scale(0.98);
+  animation: productSlideIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes productSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(40px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
 }
 
 /* ── Left Image Side ── */
 .product-image-side {
   position: relative;
   width: 100%;
-  border-radius: 16px;
+  border-radius: 12px;
   overflow: hidden;
   min-height: 400px;
 }
@@ -134,34 +150,33 @@
   width: 100%;
   background-color: #1e3a8a;
   color: #ffffff;
-  padding: 24px;
+  padding: 20px;
   display: flex;
   align-items: center;
   gap: 16px;
-  backdrop-filter: blur(8px);
+  border-radius: 0 0 12px 12px;
 }
 
 .benefit-icon {
-  width: 48px;
-  height: 48px;
-  background-color: #ffffff;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #1e3a8a;
-  flex-shrink: 0;
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 10px;
+  border-radius: 8px;
 }
 
 .benefit-text {
   display: flex;
   flex-direction: column;
+  gap: 4px;
 }
 
 .benefit-label {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   opacity: 0.8;
-  margin-bottom: 4px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
 }
 
 .benefit-value {
@@ -177,25 +192,28 @@
 
 .product-detail-header {
   margin-bottom: 32px;
+  background-color: #f3f4f6;
+  border-radius: 12px;
+  padding: 16px;
 }
 
 .product-detail-pill {
   display: inline-block;
-  background-color: #f1f5f9;
-  color: #3b4252;
+  background-color: #e0f2fe;
+  color: #1e3a8a;
   font-size: 0.75rem;
   font-weight: 600;
-  padding: 4px 12px;
-  border-radius: 100px;
-  margin-bottom: 16px;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  margin-bottom: 20px;
 }
 
 .product-detail-title {
-  font-size: 1.8rem;
+  font-size: clamp(1.6rem, 3.5vw, 2rem);
   font-weight: 800;
-  color: #0f172a;
+  color: #1e293b;
   line-height: 1.2;
-  margin: 0 0 16px;
+  margin: 0 0 20px;
 }
 
 .product-detail-desc {
@@ -210,7 +228,8 @@
 .product-plans-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 32px;
+  align-items: start;
 }
 
 .product-plan-card {
@@ -218,29 +237,41 @@
   border-radius: 12px;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  height: 100%;
+  min-height: 340px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-plan-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .theme-blue {
-  background-color: #f1f5f9;
+  background-color: #f8fafc;
 }
 
 .theme-yellow {
-  background-color: #fefce8;
+  background-color: #fff7e6;
 }
 
 .plan-card-header {
-  margin-bottom: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
 }
 
 .plan-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 9999px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 16px;
-  color: #ffffff;
+  color: #fff;
 }
 
 .theme-blue .plan-icon {
@@ -248,13 +279,14 @@
 }
 
 .theme-yellow .plan-icon {
-  background-color: #ca8a04;
+  background-color: #d9b96b;
 }
 
 .plan-header-text h4 {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
-  margin: 0 0 8px;
+  margin: 0 0 6px;
+  line-height: 1.3;
 }
 
 .theme-blue .plan-header-text h4 {
@@ -266,7 +298,7 @@
 }
 
 .plan-header-text p {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: #64748b;
   margin: 0;
   line-height: 1.5;
@@ -283,12 +315,12 @@
 .plan-features li {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  padding: 12px 0;
-  border-bottom: 1px solid rgba(0,0,0,0.06);
+  gap: 10px;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
   font-size: 0.85rem;
   color: #475569;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .plan-features li:last-child {
@@ -309,26 +341,37 @@
   color: #ca8a04;
 }
 
-/* ── Progress Dots ── */
+/* ── Progress Dashes ── */
 .product-progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.progress-dashes {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-top: 20px;
 }
 
 .progress-dash {
-  width: 40px;
-  height: 4px;
-  background-color: #cbd5e1;
-  border-radius: 4px;
+  height: 5px;
+  background-color: #d1d5db;
+  border-radius: 99px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              background-color 0.4s ease,
+              opacity 0.3s ease;
+  width: 32px;
+  opacity: 0.5;
 }
 
 .progress-dash.active {
   background-color: #1e3a8a;
-  width: 60px;
+  width: 64px;
+  opacity: 1;
 }
 
 /* ============================================================
@@ -339,7 +382,7 @@
   .product-content-wrapper {
     grid-template-columns: 1fr;
   }
-  
+
   .product-image-side {
     min-height: 300px;
   }
@@ -349,20 +392,22 @@
   .product-section {
     padding: 60px 24px;
   }
-  
+
   .product-tabs {
     flex-direction: column;
     width: 100%;
     border-radius: 12px;
     background-color: transparent;
   }
-  
+
   .product-tab {
     width: 100%;
     justify-content: center;
-    background-color: #f8fafc;
+    border-radius: 12px;
+    background-color: transparent;
+    white-space: normal;
   }
-  
+
   .product-plans-grid {
     grid-template-columns: 1fr;
   }

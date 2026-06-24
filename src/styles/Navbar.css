@@ -20,7 +20,7 @@
 
 /* Container limits width and centers */
 .navbar-container {
-  max-width: 1320px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 2.5rem;
   display: flex;

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import heroBg from '../../assets/hero-section-bg.png';
+import lifeImg from '../../assets/life insurance image.png';
 import '../../styles/ProductSection.css';
 
 const products = [
@@ -15,7 +16,7 @@ const products = [
     pill: "Farewell Cover",
     title: "Funeral support when your family needs it most.",
     description: "Protect your loved ones from funeral costs with fully arranged funeral services and a cash payout for extra expenses.",
-    benefitRange: "GHS 20,000 - GHS 1000,000",
+    benefitRange: "GHS 20,000 - GHS 1,000,000",
     image: heroBg,
     plans: [
       {
@@ -57,7 +58,7 @@ const products = [
     title: "Secure your family's future today.",
     description: "Ensure your loved ones are financially protected even when you are no longer around. Life insurance designed for peace of mind.",
     benefitRange: "GHS 50,000 - GHS 5,000,000",
-    image: heroBg,
+    image: lifeImg,
     plans: [
       {
         theme: "blue",
@@ -125,12 +126,19 @@ const products = [
 
 export function ProductSection() {
   const [activeIdx, setActiveIdx] = useState(0);
+  const [animKey, setAnimKey] = useState(0);
+
+  function goToTab(idx: number) {
+    setActiveIdx(idx);
+    setAnimKey(k => k + 1);
+  }
+
   const activeProduct = products[activeIdx];
 
   return (
     <section className="product-section">
       <div className="product-container">
-        
+
         {/* Header */}
         <div className="product-header">
           <div className="product-pill">PRODUCT CATEGORY</div>
@@ -143,10 +151,10 @@ export function ProductSection() {
         {/* Tab Navigation */}
         <div className="product-tabs">
           {products.map((p, idx) => (
-            <button 
+            <button
               key={p.id}
               className={`product-tab ${activeIdx === idx ? 'active' : ''}`}
-              onClick={() => setActiveIdx(idx)}
+              onClick={() => goToTab(idx)}
             >
               <span className="tab-icon">{p.tabIcon}</span>
               {p.tabLabel}
@@ -154,20 +162,33 @@ export function ProductSection() {
           ))}
         </div>
 
-        {/* Main Content Area */}
-        <div className="product-content-wrapper">
+        {/* Animated Content Area */}
+        <div key={animKey} className="product-content-wrapper">
+
           {/* Left: Image & Badge */}
           <div className="product-image-side">
-            <img src={activeProduct.image} alt={activeProduct.title} className="product-main-img" loading="lazy" />
-            <div className="product-benefit-badge">
-              <div className="benefit-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 12h.01"/><path d="M17 12h.01"/><path d="M7 12h.01"/></svg>
+            <img
+              src={activeProduct.image}
+              alt={activeProduct.title}
+              className="product-main-img"
+              loading="lazy"
+            />
+            {activeProduct.id !== 'life' && activeProduct.id !== 'critical' && (
+              <div className="product-benefit-badge">
+                <div className="benefit-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                    <path d="M12 12h.01"/>
+                    <path d="M17 12h.01"/>
+                    <path d="M7 12h.01"/>
+                  </svg>
+                </div>
+                <div className="benefit-text">
+                  <span className="benefit-label">Benefit Range</span>
+                  <span className="benefit-value">{activeProduct.benefitRange}</span>
+                </div>
               </div>
-              <div className="benefit-text">
-                <span className="benefit-label">Benefit Range</span>
-                <span className="benefit-value">{activeProduct.benefitRange}</span>
-              </div>
-            </div>
+            )}
           </div>
 
           {/* Right: Details & Plans */}
@@ -183,7 +204,9 @@ export function ProductSection() {
                 <div key={i} className={`product-plan-card theme-${plan.theme}`}>
                   <div className="plan-card-header">
                     <div className="plan-icon">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                      </svg>
                     </div>
                     <div className="plan-header-text">
                       <h4>{plan.title}</h4>
@@ -193,7 +216,10 @@ export function ProductSection() {
                   <ul className="plan-features">
                     {plan.features.map((feat, j) => (
                       <li key={j}>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feat-bullet"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feat-bullet">
+                          <polyline points="9 11 12 14 22 4"/>
+                          <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                        </svg>
                         <span>{feat}</span>
                       </li>
                     ))}
@@ -204,15 +230,17 @@ export function ProductSection() {
           </div>
         </div>
 
-        {/* Progress Dots */}
+        {/* Progress Dashes */}
         <div className="product-progress">
-          {products.map((_, idx) => (
-            <div 
-              key={idx} 
-              className={`progress-dash ${activeIdx === idx ? 'active' : ''}`}
-              onClick={() => setActiveIdx(idx)}
-            />
-          ))}
+          <div className="progress-dashes">
+            {products.map((_, idx) => (
+              <div
+                key={idx}
+                className={`progress-dash ${activeIdx === idx ? 'active' : ''}`}
+                onClick={() => goToTab(idx)}
+              />
+            ))}
+          </div>
         </div>
 
       </div>
