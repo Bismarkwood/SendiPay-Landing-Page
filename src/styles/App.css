@@ -6,4 +6,19 @@ main {
   display: flex;
   flex-direction: column;
   padding-top: 72px; /* offset for fixed navbar */
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure all sections behave consistently */
+main > section {
+  width: 100%;
+  max-width: 100vw;
+}
+
+/* Responsive navbar offset */
+@media (max-width: 768px) {
+  main {
+    padding-top: 72px;
+  }
 }
