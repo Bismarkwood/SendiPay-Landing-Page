@@ -2,6 +2,7 @@ import { Navbar } from './components/layout/Navbar'
 import { HeroSection } from './components/sections/HeroSection'
 import { TrustSection } from './components/sections/TrustSection'
 import { ProblemSection } from './components/sections/ProblemSection'
+import { ProductSection } from './components/sections/ProductSection'
 import './styles/App.css'
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <HeroSection />
         <TrustSection />
         <ProblemSection />
+        <ProductSection />
       </main>
     </>
   )

@@ -1,0 +1,368 @@
+/* ============================================================
+   Product Section
+   ============================================================ */
+
+.product-section {
+  width: 100%;
+  padding: 80px 24px;
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.product-container {
+  max-width: 1320px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Header ── */
+.product-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 800px;
+  margin-bottom: 40px;
+}
+
+.product-pill {
+  background-color: #f1f5f9;
+  color: #3b4252;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 6px 18px;
+  border-radius: 100px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.product-heading {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #0f172a;
+  margin: 0 0 16px;
+  letter-spacing: -0.02em;
+}
+
+.product-subtext {
+  font-size: 1rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Tabs ── */
+.product-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8fafc;
+  border-radius: 100px;
+  padding: 6px;
+  margin-bottom: 60px;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.product-tab {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border-radius: 100px;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.product-tab:hover {
+  color: #0f172a;
+}
+
+.product-tab.active {
+  background-color: #1e3a8a;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.2);
+}
+
+.tab-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Main Content Area ── */
+.product-content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 40px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+/* ── Left Image Side ── */
+.product-image-side {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  min-height: 400px;
+}
+
+.product-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+
+.product-benefit-badge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1e3a8a;
+  color: #ffffff;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  backdrop-filter: blur(8px);
+}
+
+.benefit-icon {
+  width: 48px;
+  height: 48px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1e3a8a;
+  flex-shrink: 0;
+}
+
+.benefit-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.benefit-label {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+.benefit-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* ── Right Details Side ── */
+.product-details-side {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-detail-header {
+  margin-bottom: 32px;
+}
+
+.product-detail-pill {
+  display: inline-block;
+  background-color: #f1f5f9;
+  color: #3b4252;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+}
+
+.product-detail-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.2;
+  margin: 0 0 16px;
+}
+
+.product-detail-desc {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 600px;
+}
+
+/* ── Plans Grid ── */
+.product-plans-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.product-plan-card {
+  padding: 24px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.theme-blue {
+  background-color: #f1f5f9;
+}
+
+.theme-yellow {
+  background-color: #fefce8;
+}
+
+.plan-card-header {
+  margin-bottom: 24px;
+}
+
+.plan-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+.theme-blue .plan-icon {
+  background-color: #1e3a8a;
+}
+
+.theme-yellow .plan-icon {
+  background-color: #ca8a04;
+}
+
+.plan-header-text h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.theme-blue .plan-header-text h4 {
+  color: #1e3a8a;
+}
+
+.theme-yellow .plan-header-text h4 {
+  color: #a16207;
+}
+
+.plan-header-text p {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.plan-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.plan-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  font-size: 0.85rem;
+  color: #475569;
+  line-height: 1.4;
+}
+
+.plan-features li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.feat-bullet {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.theme-blue .feat-bullet {
+  color: #1e3a8a;
+}
+
+.theme-yellow .feat-bullet {
+  color: #ca8a04;
+}
+
+/* ── Progress Dots ── */
+.product-progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.progress-dash {
+  width: 40px;
+  height: 4px;
+  background-color: #cbd5e1;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.progress-dash.active {
+  background-color: #1e3a8a;
+  width: 60px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .product-content-wrapper {
+    grid-template-columns: 1fr;
+  }
+  
+  .product-image-side {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-section {
+    padding: 60px 24px;
+  }
+  
+  .product-tabs {
+    flex-direction: column;
+    width: 100%;
+    border-radius: 12px;
+    background-color: transparent;
+  }
+  
+  .product-tab {
+    width: 100%;
+    justify-content: center;
+    background-color: #f8fafc;
+  }
+  
+  .product-plans-grid {
+    grid-template-columns: 1fr;
+  }
+}
