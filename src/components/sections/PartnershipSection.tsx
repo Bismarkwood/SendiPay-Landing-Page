@@ -1,6 +1,4 @@
-import partnershipImg from '../../assets/Partnership Image.png';
-import sendiLogo from '../../assets/logo.jpg';
-import prudentialLogo from '../../assets/prudential-logo.webp';
+import partnershipImg from '../../assets/Partnership Image 2.png';
 import '../../styles/PartnershipSection.css';
 
 interface Stat {
@@ -23,11 +21,6 @@ export function PartnershipSection() {
 
           {/* ── Left: Visual Card ── */}
           <div className="partnership-visual">
-            <div className="partnership-logos">
-              <img src={sendiLogo} alt="Sendi" className="partnership-logo partnership-logo--sendi" />
-              <span className="partnership-logo-divider" />
-              <img src={prudentialLogo} alt="Prudential" className="partnership-logo partnership-logo--prudential" />
-            </div>
             <div className="partnership-image-wrap">
               <img src={partnershipImg} alt="Sendi and Prudential partnership" className="partnership-image" loading="lazy" />
             </div>

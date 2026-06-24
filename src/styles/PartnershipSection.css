@@ -97,8 +97,9 @@
 
 .partnership-image-wrap {
   flex: 1;
-  min-height: 240px;
+  max-height: 380px;
   overflow: hidden;
+  border-radius: 20px;
 }
 
 .partnership-image {
