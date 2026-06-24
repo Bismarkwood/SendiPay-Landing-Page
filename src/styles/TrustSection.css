@@ -4,8 +4,7 @@
 
 .trust-section {
   width: 100%;
-  padding: 0 24px;
-  margin-top: -40px; /* Pull it up slightly over the hero if needed, or adjust to 0 */
+  padding: 60px 24px 80px 24px;
   position: relative;
   z-index: 10;
   display: flex;
