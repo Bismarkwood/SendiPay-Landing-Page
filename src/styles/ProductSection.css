@@ -29,59 +29,60 @@
 }
 
 .product-pill {
-  background-color: #f1f5f9;
-  color: #3b4252;
+  background-color: #f8fafc;
+  color: #64748b;
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.05em;
-  padding: 6px 18px;
+  padding: 6px 20px;
   border-radius: 100px;
+  border: 1px solid #e2e8f0;
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .product-heading {
-  font-size: clamp(2rem, 4vw, 2.8rem);
-  font-weight: 800;
-  line-height: 1.2;
-  color: #0f172a;
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #1e293b;
   margin: 0 0 16px;
   letter-spacing: -0.02em;
 }
 
 .product-subtext {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #64748b;
   line-height: 1.6;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 650px;
 }
 
 /* ── Tabs ── */
 .product-tabs {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: #f8fafc;
+  background-color: #f1f5f9;
   border-radius: 100px;
-  padding: 6px;
+  padding: 8px;
   margin-bottom: 60px;
-  gap: 8px;
-  flex-wrap: wrap;
+  gap: 4px;
 }
 
 .product-tab {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px 24px;
+  gap: 8px;
+  padding: 10px 32px;
   border-radius: 100px;
   border: none;
   background: transparent;
-  color: #64748b;
-  font-weight: 600;
+  color: #475569;
+  font-weight: 500;
   font-size: 0.95rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
 
 .product-tab:hover {
