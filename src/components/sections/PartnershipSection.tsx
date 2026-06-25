@@ -1,4 +1,4 @@
-import partnershipImg from '../../assets/Partnership Image.png';
+import partnershipImg from '../../assets/Partnership Image 3.png';
 import '../../styles/PartnershipSection.css';
 
 interface Stat {
