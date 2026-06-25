@@ -1,5 +1,5 @@
 import getAQuoteBg from '../../assets/Get a Quote Bg.png';
-import logoImg from '../../assets/logo.jpg';
+import footerLogo from '../../assets/Footer Logo.png';
 import '../../styles/Footer.css';
 
 export function Footer() {
@@ -16,7 +16,7 @@ export function Footer() {
           {/* Column 1: Brand */}
           <div className="footer-brand">
             <a href="/" className="footer-logo">
-              <img src={logoImg} alt="Sendi Logo" className="footer-logo-img" />
+              <img src={footerLogo} alt="Sendi Logo" className="footer-logo-img" />
             </a>
             <p className="footer-brand-text">
               We are building the technology that enables people build and manage their wealth across borders.
